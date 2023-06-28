@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-3.7.0.js"></script>
+</head>
+<body>
+
+<form action="hello" id="frm" method="post">
+
+이름:<input type="text" name="name" id="name"><br>
+나이:<input type="text" name="age"><br>
+주소:<input type="text" name="address"><br>
+
+<!-- <input type="submit" value="이동"> -->
+<button type="button">이동</button>
+</form>
+
+<script type="text/javascript">
+
+$("button").click(function(){
+	//document.frm.name.value = "홍길동";		name="frm"
+	if($("#name").val() == ""){
+		alert('이름을 입력해 주십시오');
+		return;
+	}
+	$("#frm").submit();
+});
+
+
+
+
+</script>
+
+
+</body>
+</html>

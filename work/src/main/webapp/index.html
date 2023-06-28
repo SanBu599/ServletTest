@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-3.7.0.js"></script>
+</head>
+<body>
+
+<h1>설문조사</h1>
+
+<form action="save" id="frm" method="post"> 
+이름: <input type="text" placeholder="이름을 기입" id="name" name="name"><hr>
+
+<p><b>질문(1)</b>영어회화에 관심이 있습니까?</p>
+<input type="radio" name="q1" value="관심있다.">예 <input type="radio" name="q1" value="둘다 말할 수 없음">둘다 말할 수 없음 <input type="radio" name="q1" value="관심없다.">아니오<hr>
+
+<p><b>질문(2)</b>영어 이외에 관심이 있는 어학이 있으면 선택해 주세요(복수 답변 가능)</p>
+<input type="checkbox" value="독일어" name="q2">독일어
+<input type="checkbox" value="프랑스어" name="q2">프랑스어
+<input type="checkbox" value="이탈리어어" name="q2">이탈리어어
+<input type="checkbox" value="스페인어" name="q2">스페인어
+<input type="checkbox" value="일본어" name="q2">일본어<hr>
+
+<p><b>질문(3)</b>영어 수업에 대한 의견</p><br>
+<textarea rows="7" cols="40" placeholder="의견을 기입" name="q3"></textarea><hr>
+
+<p><b>질문(4)</b>나이대를 선택하세요</p>
+<select name="q4">
+	<option id="none">아래에서 선택</option>
+	<option>10세 미만</option>
+	<option>10~20세</option>
+	<option>20~30세</option>
+	<option>30~40세</option>
+	<option>40~50세</option>
+	<option>50~60세</option>
+	<option>60~70세</option>
+	<option>70세 이상</option>
+</select>
+<hr>
+<button type="button">제출</button> <input type="reset" value="초기화">
+</form>
+
+<script type="text/javascript">
+$("button").click(function(){
+	if($("#name").val() == ""){
+		alert("이름을 입력해주세요.")
+		return;
+	}
+
+	if( $("#none").val() == "아래에서 선택"){
+		alert("나이대 선택해주세요");
+		return;
+	}
+	$("#frm").submit();
+});
+</script>
+</body>
+</html>
